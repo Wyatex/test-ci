@@ -15,12 +15,16 @@ install:
   script:
     - pnpm i
     - echo '安装依赖完成'
+  tags:
+    - shell
 
 test: 
   stage: test
   script:
     - pnpm coverage
     - echo '测试完成'
+  tags:
+    - shell
 
     
 build: 
@@ -28,3 +32,5 @@ build:
   script:
     - pnpm build
     - echo '打包完成'
+  tags:
+    - shell
