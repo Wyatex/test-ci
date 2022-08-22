@@ -8,10 +8,12 @@ specifiers:
   typescript: ^4.6.4
   vite: ^3.0.7
   vitest: ^0.22.1
+  vitest-test: 'link:'
   vue: ^3.2.37
   vue-tsc: ^0.39.5
 
 dependencies:
+  vitest-test: 'link:'
   vue: 3.2.37
 
 devDependencies:
