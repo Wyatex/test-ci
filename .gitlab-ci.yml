@@ -1,0 +1,42 @@
+image: node:alpine //使用的docker镜像
+
+stages:
+  - install
+  - test
+  - build
+
+cache:
+  paths:
+    - node_modules
+    - dist
+
+install:
+  stage: install
+  script:
+    - pnpm i
+    - echo '安装依赖完成'
+  only: //主分支提交的时候该job运行
+    - master
+  tags: // 在名字是shell的runner上
+    - shell
+
+test: 
+  stage: test
+  script:
+    - pnpm coverage
+    - echo '测试完成'
+  only: //主分支提交的时候该job运行
+    - master
+  tags: // 在名字是shell的runner上
+    - shell
+
+    
+build: 
+  stage: build
+  script:
+    - pnpm build
+    - echo '打包完成'
+  only: //主分支提交的时候该job运行
+    - master
+  tags: // 在名字是shell的runner上
+    - shell
