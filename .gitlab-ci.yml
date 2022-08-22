@@ -1,4 +1,4 @@
-image: node:alpine //使用的docker镜像
+image: node:alpine
 
 stages:
   - install
@@ -15,7 +15,7 @@ install:
   script:
     - pnpm i
     - echo '安装依赖完成'
-  tags: // 在名字是shell的runner上
+  tags:
     - shell
 
 test: 
@@ -23,7 +23,7 @@ test:
   script:
     - pnpm coverage
     - echo '测试完成'
-  tags: // 在名字是shell的runner上
+  tags:
     - shell
 
     
@@ -32,5 +32,5 @@ build:
   script:
     - pnpm build
     - echo '打包完成'
-  tags: // 在名字是shell的runner上
+  tags:
     - shell
